@@ -7,14 +7,15 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = 0;
+        //** I changed const to let because you cannot reassigned a const
+        let result = 0;
 
         result = num1 + num2;
 
         return result;
     }
     else {
-        return !add;
+        return false; //**returning !add is not right
     }
 }
 
@@ -25,11 +26,16 @@ function sumValues(num1, num2, add) {
  * @returns An array of each price's new price, after the discount is applied. Or false, if prices array is empty.
  */
 function discountPrices(prices, discount) {
-    const discounted = []
+    //**check if empty
+    if(prices.length == 0){
+        return false;
+    }
+
+    const discounted = []; //**was missing semi colon
     const length = prices.length;
     let discountedPrice = 0
     for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
+        discountedPrice = prices[i] * (1 - discount); //**using "+=" was not right
         discounted.push(discountedPrice);
     }
 
