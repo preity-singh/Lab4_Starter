@@ -7,7 +7,7 @@
  */
 function sumValues(num1, num2, add) {
     //**check var types 
-    if(typeof num1 != 'number' || typeof num2 != 'number' || typeof add != 'boolean'){
+    if(typeof num1 !== 'number' || typeof num2 !== 'number' || typeof add !== 'boolean'){
         return false;
     }
 
@@ -32,12 +32,12 @@ function sumValues(num1, num2, add) {
  */
 function discountPrices(prices, discount) {
     //**check var types
-    if(!Array.isArray(prices) || typeof discount != 'number'){
+    if(!Array.isArray(prices) || typeof discount !== 'number'){
         return false;
     }
     
     //**check if empty
-    if(prices.length == 0){
+    if(prices.length === 0){
         return false;
     }
 
